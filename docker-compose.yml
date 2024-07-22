@@ -31,15 +31,15 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 
-  # redpanda:
-  #   image: docker.redpanda.com/redpandadata/redpanda:latest
-  #   container_name: redpanda
-  #   ports:
-  #     - "9092:9092"
-  #   command:
-  #     - redpanda start
-  #     - --overprovisioned
-  #     - --smp 1
-  #     - --memory 1G
-  #     - --node-id 0
-  #     - --kafka-addr PLAINTEXT://0.0.0.0:9092
+  redpanda:
+    image: docker.redpanda.com/redpandadata/redpanda:latest
+    container_name: redpanda
+    ports:
+      - "9092:9092"
+    command:
+      - redpanda start
+      - --overprovisioned
+      - --smp 1
+      - --memory 1G
+      - --node-id 0
+      - --kafka-addr PLAINTEXT://0.0.0.0:9092
